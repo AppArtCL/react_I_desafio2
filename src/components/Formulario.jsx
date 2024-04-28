@@ -14,11 +14,8 @@ const Formulario = ({ actualizaErrorRegistro, actualizaColorErrorRegistro }) => 
     const validarUsuario = (e) => {
         const form = e.currentTarget;
         e.preventDefault();      
-
         if (form.checkValidity() === false) {
-
-            // e.stopPropagation();
-            actualizaErrorRegistro("Completa todos los campos!")
+            actualizaErrorRegistro("Corrige los campos incorrectos.")
             actualizaColorErrorRegistro("danger")
         } else {
             actualizaErrorRegistro("Registro exitoso.")
