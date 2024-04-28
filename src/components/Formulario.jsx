@@ -2,7 +2,7 @@ import { useState } from "react"
 import Button from "react-bootstrap/Button"
 import { Form } from "react-bootstrap"
 
-const Formulario = () => {
+const Formulario = ({ actualizaErrorRegistro, actualizaColorErrorRegistro }) => {
     const [validated, setValidated] = useState(false);
     const [formData, setFormData] = useState({
         nombre: "",
@@ -13,9 +13,16 @@ const Formulario = () => {
   
     const validarUsuario = (e) => {
         const form = e.currentTarget;
+        e.preventDefault();      
+
         if (form.checkValidity() === false) {
-            e.preventDefault();
-            e.stopPropagation();
+
+            // e.stopPropagation();
+            actualizaErrorRegistro("Completa todos los campos!")
+            actualizaColorErrorRegistro("danger")
+        } else {
+            actualizaErrorRegistro("Registro exitoso.")
+            actualizaColorErrorRegistro("success")            
         }
         setValidated(true);
     };    
@@ -64,10 +71,13 @@ const Formulario = () => {
             placeholder="Contraseña"
             value={formData.password}
             onChange={funcionOnChange}
-            minLength={6}
+            minLength={4}
             required
-            isInvalid={validated && formData.password.length < 6}
+            isInvalid={validated && formData.password.length < 4}
           />
+          <Form.Control.Feedback type="invalid">
+            La contraseña debe tener al menos 4 caracteres.
+          </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control
@@ -76,11 +86,16 @@ const Formulario = () => {
             placeholder="Confirma tu contraseña"
             value={formData.confimaPassword}
             onChange={funcionOnChange}
-            minLength={6}
+            minLength={4}
             required
             pattern={formData.password}
-            isInvalid={validated && formData.confimaPassword !== formData.password}
+            isInvalid={
+              validated && formData.confimaPassword !== formData.password
+            }
           />
+          <Form.Control.Feedback type="invalid">
+            Las contraseñas no son iguales.
+          </Form.Control.Feedback>
         </Form.Group>
         <Button variant="success" type="submit">
           Registrarse

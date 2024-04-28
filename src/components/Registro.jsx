@@ -4,7 +4,15 @@ import SocialButton from "./SocialButton";
 import Card from 'react-bootstrap/Card';
 
 
-const Registro = ({error, colorError}) => {
+const Registro = ({ error, enviaErrorApp, colorError, enviaColorErrorApp }) => {
+    const actualizaError = (data) => {
+        enviaErrorApp(data);
+    }
+
+    const actualizaColorError = (data) => {
+        enviaColorErrorApp(data);
+    }
+
   return (
     <Card>
       <Card.Body>
@@ -16,7 +24,7 @@ const Registro = ({error, colorError}) => {
         </div>
         <p>O usa tu email para registrarte</p>
       </Card.Body>
-      <Formulario error={error} colorError={colorError} />
+      <Formulario actualizaErrorRegistro={actualizaError} actualizaColorErrorRegistro={actualizaColorError} />
       <Alert error={error} colorError={colorError} />
     </Card>
   );

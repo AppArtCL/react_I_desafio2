@@ -59,9 +59,14 @@ body {
 }
 
 .formulario {
-  padding: 0px 1rem 0px 1rem;
+  padding: 0px 1rem 0.5rem 1rem;
 }
 
 .btn {
   width: 100%;
+}
+
+.alerta {
+  padding: 1rem 0rem 1rem 0rem;
+  margin: 0rem 1rem 1rem 1rem;
 }

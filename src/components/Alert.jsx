@@ -1,12 +1,10 @@
-
+import { Alert as AlertBootstrap } from "react-bootstrap"
 
 const Alert = ({error, colorError}) => {
   return (
-    <div>
-        <div>Datos error</div>
-        <div>{error}</div>
-        <div>{colorError}</div>
-    </div>
+    <>
+    <AlertBootstrap className="alerta" variant={colorError} >{error}</AlertBootstrap>
+    </>
   )
 }
 
