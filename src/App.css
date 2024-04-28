@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  color: black;
+  background: rgb(164,255,177);
+  background: linear-gradient(45deg, rgba(164,255,177,1) 0%, rgba(226,249,136,1) 100%, rgba(226,249,136,1) 100%);
+}
+
+.card {
+  padding: 2em;
+  border-radius: 30px;
+  border-color: rgb(235, 248, 231);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding: 0px;
+  margin: 0px 0px 0.5rem 0px;;
+}
+
+.botonesSociales {
+  width: 14rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 10px 0px;
+}
+
+.fa-brands {
+  font-size: 2rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 100%;
+  color: black;
+}
+
+.botonSocial {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 100%;
+}
+
+.formulario {
+  padding: 0px 1rem 0px 1rem;
+}
+
+.btn {
+  width: 100%;
+}
